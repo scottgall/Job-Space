@@ -7,10 +7,9 @@ A MySQL backed CRUD application to track and manage job applications.  Users can
 1. Clone repo.
 
 2. Open root directory and run:
-   ```
-   npm install
-   ```
-3. Create and connect MySQL database from schema.
+   ```npm install```
+
+3. Create MySQL database from ```db/schema.sql``` and enter it's info in ```config/connection.js```.
 
 ## Technologies used
 - MySQL
