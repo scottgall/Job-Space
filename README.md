@@ -1,41 +1,23 @@
 # JobSpace
 
-### Details on the Project
-JobSpace is an application that helps you organize your job applications.  Its main features include a dashboard for you to keep track of your jobs and an events page where you can schedule events such as meetups and interviews. 
+A MySQL backed CRUD application to track and manage job applications.  Users can add and update jobs they are interested in, along with any related events, which populate on their calendar.
 
-The interface is simple and clean in which the user can use with ease.  
+## Demo
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
-### The Thoughts behind this Project
-As young professionals who are graduating bootcamp and looking to enter the job market, we felt that a platform to organize and track job applications would be really helpful. After countless hours of brainstorming ideas, JobSpace was born. 
+## Local setup
+
+1. Clone repo.
+
+2. Open root directory and run:
+   ```npm install```
+
+3. Create MySQL database from ```db/schema.sql``` and update ```config/connection.js```.
 
 ## Technologies used
-* Bootstrap
-
-* FullCalendar
-
-* Bootstrap Datetimepicker
-
-* moment.js 
-
-* Sortable (jQuery UI)
-
-* node.js
-
-* express.js
-
-* MySQL
-
-* orm.js
-
-* MVC
-
-### Execution
-* Run `npm install` from your CLI within the main directory to enable dependencies.
-* Create database & tables from schema file.
-
-### Contributors
-Scott 'Scott' Gall </br>
-TreShawn 'Treek' Duncan</br>
-Sarawut 'BigBang' Mahnokhueng</br>
-Enrique 'Ricky' Rosales</br>
-Kenneth 'Ken' Huynh
+- MySQL
+- Express
+- Node.js
+- Bootstrap

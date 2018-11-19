@@ -22,7 +22,6 @@ $(document).ready(function () {
                 }
                 eventsArr.push(eventObj);
             }
-            console.log(eventsArr);
             displayCalendar();
         }
 

@@ -77,14 +77,12 @@ $(document).ready(function () {
   function getJobs() {
     $.get("/api/jobs", function (data) {
       jobs = data;
-      console.log(jobs);
       initializeRows();
     });
   }
 
   //Sortable --
   $(function () {
-    console.log("workk");
     $("#applied-container, #interviewed-container, #archived-container, #offered-container").sortable({
       connectWith: ".sortable",
     }).disableSelection();
@@ -98,12 +96,6 @@ $(document).ready(function () {
       // prelocation = $(this.children).attr('data-prelocate', this.id);
       prelocation = $(this).val();
       data_id = $(this.children).attr("data");
-
-      console.log("start point")
-      console.log("data:" + data_id);
-      console.log($(this.children));
-      console.log('=====================');
-
   },
     receive: function(e, ui) {
       let job_id = data_id;
@@ -115,12 +107,6 @@ $(document).ready(function () {
       data_id = 0;
       prelocation = 0;
       
-      
-      console.log("job-id: " + job_id);
-      // console.log("old: " + old_position);
-      console.log("new: " + current_position);
-      console.log('=====================');
-      // console.log(ui.item.context.offsetParent.classList[2]);
       var newData = {
         "stage": current_position
       }
@@ -130,7 +116,6 @@ $(document).ready(function () {
         data: newData
       }).then(
         function(data) {
-          console.log("its work !!");
         }
       );
   }
@@ -150,10 +135,8 @@ $(document).ready(function () {
   function modalJob(event) {
     event.stopPropagation();
     var job = $(this).attr("id");
-    console.log(job);
     $.ajax("/api/job/"+job).then(function(res) {
       var data = res[0];
-      console.log(res)
       // console.log(data.company);
       $header.html(`<h1 class='modal-title'>${data.company} <br> ${data.title}</h1>`)
       $body.html(`<h4>${data.description}</h4><h2>Contact: ${data.primary_contact_name} <br> Phone: ${data.primary_contact_phone} <br> Salary: $${data.salary}`)
