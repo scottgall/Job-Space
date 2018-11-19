@@ -49,7 +49,6 @@ $(document).ready(function(){
     $('body').on('click', '.deleteEvent', function() {
         let index = $(this).val();
         let eventId = events[index]['id'];
-        console.log(eventId);
         events.splice(index, 1);
         $(this).parent().remove();
 
@@ -62,7 +61,6 @@ $(document).ready(function(){
           type: "DELETE"
         }).then(
           function() {
-            console.log("deleted cat", id);
             // Reload the page to update events
             // location.reload();
           }
@@ -74,7 +72,6 @@ $(document).ready(function(){
     $('body').on('click', '.editModal', function() {
         let index = $(this).val();
         currentEvent = index;
-        console.log('current event', currentEvent);
         for (var key in events[index]) {
             if ((events[index][key] === 'undefined') || (!events[index][key])) {
                 $(`#${key}`).val('');
@@ -119,9 +116,7 @@ $(document).ready(function(){
         }).then(
             function(data) {
                 if (isNaN(id)) {
-                    console.log(data.id);
                     id = data.id;
-                    console.log(id);
                 }
                 updateEvents(id);
             });
@@ -132,7 +127,6 @@ $(document).ready(function(){
         for (i = 0; i < events.length; i++) {
             if (isNaN(events[i].job_id)) {
                 events[i]['job_id'] = id;
-                console.log(events[i]);
             }
         }
         // loop through events, put/post accordingly
@@ -172,7 +166,6 @@ $(document).ready(function(){
         }
         $(".event-input").each(function() {
             newEvent[$(this).attr('name')] = $(this).val().trim();
-            console.log(newEvent)
         });
         
         if (currentEvent) {
@@ -180,12 +173,10 @@ $(document).ready(function(){
             newEvent['id'] = events[currentEvent]['id'];
             events[currentEvent] = newEvent;
             currentEvent = null;
-            console.log('current event null', currentEvent)
         } else {
             events.push(newEvent);
         }
         renderEvents();
-        console.log(events)
         $('#myModal').modal('hide');
     
     });

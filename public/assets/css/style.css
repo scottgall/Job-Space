@@ -5,13 +5,19 @@ body {
 }
 
 body{
-  background-image: url('../images/login3.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
+  position:fixed;
+  top:0px;
+  left:0px;
+  height:100%;
+  width:100%;
+  
+  /*Fallback if gradeints don't work */
+  background: #9b59b6;
+  /*Linear gradient... */
+  background: 
+    radial-gradient(
+     at center, #84663a, #100e0d
+    );
 }
 
 input {
@@ -89,13 +95,13 @@ hr {
 }
 
 .userInfo{
-  margin: 5px 5px 0px -11px;
-  width: 500px;
+  margin: .5em auto;
+  width: 20em;
   height: 30px;
   display: block;
   border: 1px solid black;
 }
 
 .loginBtn{
-  width: 250px;
+  width: 10em;
 }
