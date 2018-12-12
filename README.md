@@ -1,4 +1,4 @@
-# [JobSpace](https://github.com/scottgall/Job-Space.git)
+# [JobSpace](https://thejobspace.herokuapp.com/)
 
 A MySQL backed CRUD application to track and manage job applications.  Users can add and update jobs they are interested in, along with any related events, which populate on their calendar.
 
